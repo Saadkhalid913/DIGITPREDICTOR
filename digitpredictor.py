@@ -7,14 +7,14 @@ Original file is located at
     https://colab.research.google.com/drive/157CboRP_Sq48Mvvze33cqmf8dLDWc5qA
 """
 
-!unzip ImageDataSet.zip
-
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import pandas as pd
 from keras.preprocessing import image 
 from keras.preprocessing.image import ImageDataGenerator
+
+np.set_printoptions(suppress=True)
 
 """Processing images """
 
@@ -74,8 +74,5 @@ for i, k in enumerate(res):
 indices = {TESTSET.class_indices[key]: key for key in TESTSET.class_indices }
 print(indices[ind], "%s" % (max*100) + "%")
 
-np.set_printoptions(suppress=True)
 
-cnn.save("DOUBLE LAYER MODEL")
 
-model = tf.keras.models.load_model("DOUBLE LAYER MODEL")

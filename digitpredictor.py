@@ -23,7 +23,7 @@ TRAIN_GENERATOR = ImageDataGenerator(rescale=1./10,
                               zoom_range=0.5,
                               horizontal_flip=True)
 
-TRAINSET = TRAIN_GENERATOR.flow_from_directory(directory="archive/train", 
+TRAINSET = TRAIN_GENERATOR.flow_from_directory(directory=PATH_TO_TRAINING, 
                                                target_size=(32,32),
                                                batch_size=32,
                                                class_mode = "categorical",
@@ -31,7 +31,7 @@ TRAINSET = TRAIN_GENERATOR.flow_from_directory(directory="archive/train",
 
 TEST_GENERATOR = ImageDataGenerator(rescale=1./10)
 
-TESTSET = TEST_GENERATOR.flow_from_directory(directory="archive/eval", 
+TESTSET = TEST_GENERATOR.flow_from_directory(directory=PATH_TO_TEST, 
                                                target_size=(32,32), 
                                                 batch_size=32,
                                                class_mode = "categorical",
